@@ -1,21 +1,21 @@
 module.exports.run = async (client, message, args) => {
 
-  if(message.author.id != '755010613360459866') return message.reply(`Sorry you can't run this command.`);
+  if(message.author.id != '755010613360459866') return message.reply(`Sorry you can't run this command.`); // Makes it so only a certain UserID can use the command.
 
 
-    // UDP SHIT BELOW
+    // UDP
 
     const UDP = require('dgram')
 
     const UDPclient = UDP.createSocket('udp4')
 
-    const port = 2222 // The port its send to (For BS = 22222)
+    const port = 2222 // The destination port
 
-    const hostname = '192.168.50.7' // The IP it has to send to (For BS = 192.168.0.254)
+    const hostname = '192.168.50.7' // The destination IP-adres
 
-    if (!args[0]) return "Please enter a msg"
+    if (!args[0]) return "Please enter a msg" // If user didn't include a message after the command, return this.
 
-    const udpMessage = args[0]
+    const udpMessage = args[0]  // Define udpMessage as the args of the command
 
 UDPclient.on('message', (message, info) => {
   // get the information about server address, port, and size of packet received.
@@ -42,6 +42,6 @@ UDPclient.send(packet, port, hostname, (err) => {
 module.exports.help = {
     name: "udp",
     category: "general",  /* general, information, moderation or testing - if set to invalid category, it won't display. */
-    description: "Check the bots latency.",
+    description: "send udp.",
     aliases: []
 }

@@ -7,18 +7,18 @@ module.exports.run = async (client, message, args) => {
     const udpRow = new discord.MessageActionRow().addComponents(
 
         new discord.MessageButton()
-            .setCustomId("ScoreT1add")
-            .setLabel("T1 add")
+            .setCustomId("Button1")
+            .setLabel("Option 1")
             .setStyle("PRIMARY"),
 
         new discord.MessageButton()
-            .setCustomId("ScoreT2add")
-            .setLabel("T2 add")
+            .setCustomId("Button2")
+            .setLabel("Option 2")
             .setStyle("PRIMARY"),
 
             new discord.MessageButton()
-            .setCustomId("TeamReset")
-            .setLabel("Reset")
+            .setCustomId("Button3")
+            .setLabel("Option 3")
             .setStyle("PRIMARY")
 
     )
@@ -48,16 +48,16 @@ module.exports.run = async (client, message, args) => {
                 interaction.deferUpdate().catch(err => {})
 
                 switch (id) {
-                        case "ScoreT1add":
-                        	  udpMessage = "88813_ScoreT1add"
+                        case "Button1":
+                        	  udpMessage = "Message1"
                         break;
     
-                        case "ScoreT2add":
-                            udpMessage = "88813_ScoreT2add"
+                        case "Button2":
+                            udpMessage = "Message2"
                         break;
 
-                        case "Reset":
-                            udpMessage = "88813_Reset"
+                        case "Button3":
+                            udpMessage = "Message3"
                         break;
 
                     }
@@ -66,9 +66,9 @@ module.exports.run = async (client, message, args) => {
 
                     const UDPclient = UDP.createSocket('udp4')
                 
-                    const port = 2222 // The port its send to (For BS = 22222)
+                    const port = 2222 // Destination port
                 
-                    const hostname = '192.168.50.7' // The IP it has to send to (For BS = 192.168.0.254)
+                    const hostname = '192.168.50.7' // Destination IP-adres
                 
                     UDPclient.on('message', (message, info) => {
                       // get the information about server address, port, and size of packet received.

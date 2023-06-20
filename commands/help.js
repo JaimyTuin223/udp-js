@@ -1,13 +1,12 @@
 module.exports.run = async (client, message, args) => {
 
-    message.channel.send("This bot is made by @ThatGamingGinger.\r\nWith the purpose of making my UDP system be accessible via discord msgs and buttons.\r\n\nFor questions DM @ThatGamingGinger")
+    message.channel.send("This bot is a test project made by @jaimytuin, to see how UDP could be utilized via a discord bot.\r\n\nFor questions DM @jaimytuin")
   
-
 }
   
   module.exports.help = {
       name: "help",
-      category: "general",  /* general, information, moderation or testing - if set to invalid category, it won't display. */
-      description: "Check the bots latency.",
+      category: "general", 
+      description: "Simple help msg.",
       aliases: []
   }

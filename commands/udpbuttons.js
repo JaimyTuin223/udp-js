@@ -99,6 +99,6 @@ module.exports.run = async (client, message, args) => {
 module.exports.help = {
     name: "udpbutton",
     category: "general",  /* general, information, moderation or testing - if set to invalid category, it won't display. */
-    description: "Check the bots latency.",
+    description: "Send UDP messages when a button is clicked.",
     aliases: []
 }

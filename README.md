@@ -25,7 +25,7 @@ To deploy this project run
 
 ## Features
 
-- Discord.JS v13
+- Discord.JS v13 (I will release a Discord.js v14 version later.)
 - Simple command handler
 - UDP messaging system
 - Code explanation 

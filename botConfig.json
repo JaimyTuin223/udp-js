@@ -1,4 +1,6 @@
 {
     "token": "TOKEN_HERE",
-    "prefix": "."
+    "prefix": ".",
+    "hostname": "DESTINATION_IP",
+    "port": 2222
 }

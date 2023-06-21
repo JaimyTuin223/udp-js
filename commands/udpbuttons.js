@@ -1,10 +1,11 @@
 const discord = require("discord.js")
+const { hostname, port } = require('../botConfig.json')
 
 module.exports.run = async (client, message, args) => {
 
-    if(message.author.id != '755010613360459866') return message.reply(`Sorry you can't run this command.`);
+    if (message.author.id != '755010613360459866') return message.reply(`Sorry you can't run this command.`);
 
-    const udpRow = new discord.MessageActionRow().addComponents(
+    const udpRow = new discord.MessageActionRow().addComponents( // Creating the button row
 
         new discord.MessageButton()
             .setCustomId("Button1")
@@ -16,7 +17,7 @@ module.exports.run = async (client, message, args) => {
             .setLabel("Option 2")
             .setStyle("PRIMARY"),
 
-            new discord.MessageButton()
+        new discord.MessageButton()
             .setCustomId("Button3")
             .setLabel("Option 3")
             .setStyle("PRIMARY")
@@ -25,14 +26,14 @@ module.exports.run = async (client, message, args) => {
 
     let udpMessage = "undefined"
 
-    message.channel.send({content: "UDP buttons", components: [udpRow]}).then(async msg => {
+    message.channel.send({ content: "UDP buttons", components: [udpRow] }).then(async msg => {
 
         let returned = false
 
         const filter = (interaction) => {
             if (interaction.user.id === message.author.id) return true;
             returned = true
-            return interaction.reply({content: "Sorry, you can't use this button.", ephemeral:true});
+            return interaction.reply({ content: "Sorry, you can't use this button.", ephemeral: true });
         }
         if (returned) return
 
@@ -45,52 +46,48 @@ module.exports.run = async (client, message, args) => {
             if (interaction.message.id == msg.id) {
 
                 const id = interaction.customId;
-                interaction.deferUpdate().catch(err => {})
+                interaction.deferUpdate().catch(err => { })
 
                 switch (id) {
-                        case "Button1":
-                        	  udpMessage = "Message1"
-                        break;
-    
-                        case "Button2":
-                            udpMessage = "Message2"
+                    case "Button1":
+                        udpMessage = "Message1"
                         break;
 
-                        case "Button3":
-                            udpMessage = "Message3"
+                    case "Button2":
+                        udpMessage = "Message2"
                         break;
 
-                    }
+                    case "Button3":
+                        udpMessage = "Message3"
+                        break;
 
-                    const UDP = require('dgram')
+                }
 
-                    const UDPclient = UDP.createSocket('udp4')
-                
-                    const port = 2222 // Destination port
-                
-                    const hostname = '192.168.50.7' // Destination IP-adres
-                
-                    UDPclient.on('message', (message, info) => {
-                      // get the information about server address, port, and size of packet received.
-                
+                const UDP = require('dgram')
+
+                const UDPclient = UDP.createSocket('udp4')
+
+                UDPclient.on('message', (message, info) => {
+                    // get the information about server address, port, and size of packet received.
+
                     console.log('Address: ', info.address, 'Port: ', info.port, 'Size: ', info.size)
-                
-                      //read message from server
-                
-                      console.log('Message from server', message.toString())
-                    })
-                
-                    const packet = Buffer.from(`${udpMessage}`)
-                
-                    UDPclient.send(packet, port, hostname, (err) => {
+
+                    //read message from server
+
+                    console.log('Message from server', message.toString())
+                })
+
+                const packet = Buffer.from(`${udpMessage}`)
+
+                UDPclient.send(packet, port, hostname, (err) => {
                     if (err) {
                         console.error('Failed to send packet !!')
                     } else {
                         console.log(`Packet send !! - ${udpMessage}`)
                     }
                 })
-              } // else return;
-          });
+            }
+        });
 
     })
 
@@ -98,7 +95,5 @@ module.exports.run = async (client, message, args) => {
 
 module.exports.help = {
     name: "udpbutton",
-    category: "general",  /* general, information, moderation or testing - if set to invalid category, it won't display. */
-    description: "Send UDP messages when a button is clicked.",
     aliases: []
 }

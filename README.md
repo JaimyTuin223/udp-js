@@ -11,7 +11,16 @@ Installing the correct packages can be done with the following npm command:
 ```bash
   npm i
 ```
-Don't forget to add your Bot Token, Destination IP and Destination Port inside `botconfig.json`.
+Don't forget to add your Bot Token, Destination IP and Destination Port inside `botconfig.json`:
+
+```json
+{
+    "token": "TOKEN_HERE",
+    "prefix": ".",
+    "hostname": "DESTINATION_IP",
+    "port": 2222
+}
+```
 ##### To be able to run this code locally your device will need to have Node.JS installed, which can be found [here](https://nodejs.org/en/download)
     
 ## Deployment

@@ -1,13 +1,8 @@
-const { Client, Intents, Events, Collection, Interaction } = require("discord.js") 
+const { Client, Intents, Events, Collection, Interaction, discord } = require("discord.js") 
 const botConfig = require("./botConfig.json")                             
 const fs = require("fs");
-const discord = require("discord.js")
 require("dotenv").config();
-
 const prefix = botConfig.prefix
-
-const { ContextMenuCommandBuilder } = require(`@discordjs/builders`); //These 2 are experiments
-const { ApplicationCommandType } = require('discord-api-types/v9');
 
 const client = new Client({ intents: [Intents.FLAGS.GUILDS, Intents.FLAGS.GUILD_MESSAGES, Intents.FLAGS.GUILD_MESSAGE_REACTIONS] });
 

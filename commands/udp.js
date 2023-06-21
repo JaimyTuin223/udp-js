@@ -11,9 +11,9 @@ module.exports.run = async (client, message, args) => {
 
   const UDPclient = UDP.createSocket('udp4')
 
-  if (!args[0]) return "Please enter a msg" // If user didn't include a message after the command, return this.
+  if (!args.join(' ')) return "Please enter a msg" // If user didn't include a message after the command, return this.
 
-  const udpMessage = args[0]  // Define udpMessage as the args of the command
+  const udpMessage = args.join(' ')  // Define udpMessage as the args of the command
 
   UDPclient.on('message', (message, info) => {
     // get the information about server address, port, and size of packet received.

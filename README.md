@@ -5,6 +5,8 @@ UDP messaging system built into a discord bot. This project was made as a test, 
 
 I'm currently working on getting the UDP receiver public too, but it needs some modifications, because its a bit out of date.
 
+##### NOTE: Both the hosting and receiving devices must be in the same network.
+
 
 ## Installation
 

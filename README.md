@@ -46,6 +46,7 @@ To deploy this project run
 
 ## Feedback
 
-If you have any problems, please join my discord server [here](https://discord.gg/8KxqWAKCPe)
-#### If you find any bugs/errors, please report them to me in discord DMs (@jaimytuin) or via my email jaimytuinyt@gmail.com
+If you have problems, feedback, or have had any other annoying occurrences please join my discord server [here](https://discord.gg/8KxqWAKCPe)
+
+#### If you don't feel like joining the server feel free to dm me on discord (@jaimytuin) or send me an email jaimytuinyt@gmail.com.
 

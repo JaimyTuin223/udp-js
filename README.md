@@ -1,7 +1,7 @@
 
 # UDP bot system
 
-UDP messaging system built into a discord bot. This project was made as a test, to try and see how UDP could be used via a discord channel.
+UDP messaging system built into a discord bot. This project was made as a test, to try and see how UDP could be used via a discord channel. (Made with the help from https://nodejs.org/api/dgram.html)
 
 
 ## Installation

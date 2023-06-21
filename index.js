@@ -25,11 +25,6 @@ for (const file of commandFiles) {
 
 }
 
-const data = new ContextMenuCommandBuilder()
-	.setName('test')
-	.setType(ApplicationCommandType.User);
-
-
 client.once("ready", async () => {
     console.log(`${client.user.username} is online.`);
     client.user.setActivity(`Sending UDP messages on command. - .help`, { type: "PLAYING" }); // Activity status

@@ -3,7 +3,7 @@
 
 UDP messaging system built into a discord bot. This project was made as a test, to try and see how UDP could be used via a discord bot. (Made with the help from https://nodejs.org/api/dgram.html)
 
-I'm currently working on getting the UDP receiver public too, but it needs some modifications, because its a bit out of date.
+I'm currently working on getting the UDP receiver public too, but it needs some modifications.
 
 ##### NOTE: Both the hosting and receiving devices must be in the same network.
 

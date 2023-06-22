@@ -5,7 +5,7 @@ UDP messaging system built into a discord bot. This project was made as a test, 
 
 UDP receiver can be found [here](https://github.com/JaimyTuin223/UDP-receiver)
 
-##### NOTE: Both the hosting and receiving devices must be in the same network.
+##### NOTE: UDP only works when both the sending and receiving code are on the same network, If you wish to send packets outside your own network you can set up Port forwarding on both routers.
 
 
 ## Installation

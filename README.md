@@ -3,8 +3,8 @@
 
 UDP messaging system built into a discord bot. This project was made as a test, to try and see how UDP could be used via a discord bot. (Made with the help from https://nodejs.org/api/dgram.html)
 
-UDP receiver can be found [here](https://github.com/JaimyTuin223/UDP-receiver)
-UDP sender without discord bot can be found [here](https://github.com/JaimyTuin223/UDP-sender)
+###### UDP receiver can be found [here](https://github.com/JaimyTuin223/UDP-receiver) 
+###### UDP sender without discord bot can be found [here](https://github.com/JaimyTuin223/UDP-sender)
 
 ##### NOTE: UDP only works when both the sending and receiving code are on the same network, If you wish to send packets outside your own network you can set up Port forwarding on both routers.
 
